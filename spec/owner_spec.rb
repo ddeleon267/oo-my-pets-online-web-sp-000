@@ -7,7 +7,7 @@ describe Owner do
     @owner = Owner.new("Victoria")
   end
 
-  after do 
+  after do
     Owner.all.clear
     Cat.all.clear
     Dog.all.clear
@@ -81,6 +81,7 @@ describe Owner do
     describe "#buy_dog" do
       it 'can buy a dog that is an instance of the Dog class' do
         expect(@owner.dogs.count).to eq(0)
+
         @owner.buy_dog("Snuffles")
         @owner.dogs.each do |dog|
           expect(dog).to be_a(Dog)
